@@ -29,7 +29,7 @@ class ServiceProvider extends BaseServiceProvider {
 	public function register()
 	{
 		$this->app->bind('versions', function() {
-			return new ElequentVersions;
+			return new EloquentVersions;
 		});
 	}
 
