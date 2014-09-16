@@ -18,7 +18,7 @@ class ServiceProvider extends BaseServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('fynt/elequent-versions');
+		$this->package('fynt/eloquent-versions');
 	}
 
 	/**
