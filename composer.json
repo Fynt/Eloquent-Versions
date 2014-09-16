@@ -1,0 +1,23 @@
+{
+    "name": "fynt/eloquent-versions",
+    "description": "Save versions of your Eloquent models and easily restore past copies.",
+    "authors": [
+        {
+            "name": "Ryan",
+            "email": "ryan@fynt.ca"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "laravel/framework": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Fynt\\EloquentVersions": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
