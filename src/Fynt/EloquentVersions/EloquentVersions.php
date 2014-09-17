@@ -70,7 +70,7 @@ class EloquentVersions {
    * @param int $versionId
    * @return array
    */
-  public static function loadDataByDraftId($versionId)
+  public static function loadDataByVersionId($versionId)
   {
     $result = self::getVersionsTable()->whereId($versionId)->first();
     return json_decode($result->data);
@@ -103,7 +103,7 @@ class EloquentVersions {
   }
 
   /**
-   * How many drafts are saved for a given model?
+   * How many versions are saved for a given model?
    *
    * @param Eloquent $model
    * @return int
