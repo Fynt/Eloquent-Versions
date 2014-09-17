@@ -117,7 +117,7 @@ class EloquentVersions {
    * Retrieve the most recent version of a model
    *
    * @param Eloquent $model
-   * @return model
+   * @return stdClass|null
    */
   public static function latest($model)
   {
