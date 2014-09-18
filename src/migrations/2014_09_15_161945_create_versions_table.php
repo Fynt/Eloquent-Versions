@@ -15,7 +15,7 @@ class CreateVersionsTable extends Migration {
 		Schema::create('versions', function($table)
 		{
 			$table->increments('id');
-			$table->integer('object_id');
+			$table->integer('object_id')->unsigned();
 			// Max table name length is 64 chars.
 			$table->string('object_table', 64);
 			$table->text('data');
