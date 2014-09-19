@@ -41,14 +41,13 @@ class EloquentVersions {
   public static function add($model)
   {
     $jsonData   = json_encode($model->toArray());
-    $table  = get_class($model);
 
     if($model->id) {
       $creationDate = date('Y-m-d H:i:s');
 
       try {
         return self::getVersionsTable()->insert([
-          'object_table' => $table,
+          'object_table' => get_class($model),
           'object_id' => $model->id,
           'data' => $jsonData,
           'hash' => sha1($jsonData),
