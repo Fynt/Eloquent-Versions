@@ -31,7 +31,7 @@ class PublishedScope implements ScopeInterface {
 
     foreach ((array) $query->wheres as $key => $where)
     {
-      // If the where clause is a soft delete date constraint, we will remove it from
+      // If the where clause is a published date constraint, we will remove it from
       // the query and reset the keys on the wheres. This allows this developer to
       // include deleted model in a relationship result set that is lazy loaded.
       if ($this->isPublishedConstraint($where, $column))
@@ -44,7 +44,7 @@ class PublishedScope implements ScopeInterface {
   }
 
   /**
-   * Determine if the given where clause is a soft delete constraint.
+   * Determine if the given where clause is a published constraint.
    *
    * @param array $where
    * @param string $column
