@@ -32,7 +32,7 @@ trait PublishedTrait {
    *
    * @return bool
    */
-  public function published()
+  public function isPublished()
   {
     return ! is_null($this->{$this->getPublishedAtColumn()});
   }
