@@ -46,7 +46,7 @@ class EloquentVersions {
       $creationDate = date('Y-m-d H:i:s');
 
       try {
-        $result = self::getVersionsTable()->insert([
+        return self::getVersionsTable()->insertGetId([
           'object_table' => get_class($model),
           'object_id' => $model->id,
           'data' => $jsonData,
@@ -54,8 +54,6 @@ class EloquentVersions {
           'created_at' => $creationDate,
           'updated_at' => $creationDate
         ]);
-        var_dump($result);die;
-        return $result;
       } catch (QueryException $e) {}
     }
 
