@@ -36,7 +36,7 @@ class EloquentVersions {
    * You can specify a name for the version if you want to.
    *
    * @param Elequnt $model
-   * @return bool
+   * @return int|null
    */
   public static function add($model)
   {
@@ -46,7 +46,7 @@ class EloquentVersions {
       $creationDate = date('Y-m-d H:i:s');
 
       try {
-        return self::getVersionsTable()->insert([
+        $result = self::getVersionsTable()->insert([
           'object_table' => get_class($model),
           'object_id' => $model->id,
           'data' => $jsonData,
@@ -54,12 +54,12 @@ class EloquentVersions {
           'created_at' => $creationDate,
           'updated_at' => $creationDate
         ]);
-      } catch (QueryException $e) {
-        return false;
-      }
+        var_dump($result);die;
+        return $result;
+      } catch (QueryException $e) {}
     }
 
-    return false;
+    return null;
   }
 
 
